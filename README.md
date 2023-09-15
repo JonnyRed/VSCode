@@ -1,14 +1,17 @@
+
+* 2023/9/5 reset VScode:
+* 2023/9/15 Added Jupyter VScode documentation
+
 # Visual Source Documentation
 * [Documentation for Visual Studio Code][]
 * [User and Workspace Settings][]
+
 
 # Tutorials
 * Very good youtube tutorial on [setting up][Shaffer tutorial] 
 vscode by  [Corey Schafer][]
 
 # VScode setup
-
-* 2023/9/5 reset VScode:
 
 1. Did not [delete VScode][Delete VSCode and settings].
 1.  To remove all user data after uninstalling VS Code, delete the folders 
@@ -64,6 +67,7 @@ A list of all the default settings can be opened through the settings option.
 ```
 
 # Tips and Tricks
+
 [Visual Studio Code Tips and Tricks][]
 
 [Visual Studio Code Tips and Tricks]:https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_basics
@@ -106,6 +110,11 @@ The following is `settings.json`
 }
 ```
 
+# Jupyter
+
+Jupyter description in VScode is described well in [VScode Jupyter documentation][]. Custom notebook diffing is especial interesting
+
+
 # Micropython source
 The `.env` can be used to specify the origin of source files is as follows
 
@@ -132,3 +141,4 @@ PYTHONPATH=${WORKSPACE_FOLDER};${WORKSPACE_FOLDER}/test
 [Cytron Maker board]:https://docs.google.com/document/d/1JoHsZk5IipQPCLXWbZYpDKjGlnkyACOJ1taUrKVsRg8/edit
 [Pico board]:https://www.raspberrypi.org/documentation/rp2040/getting-started/#rp2040-boards
 [Delete VSCode and settings]: https://code.visualstudio.com/docs/setup/uninstall
+[VScode Jupyter documentation]: https://code.visualstudio.com/docs/datascience/jupyter-notebooks
