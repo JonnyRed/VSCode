@@ -1,6 +1,8 @@
 
 * 2023/9/5 reset VScode:
 * 2023/9/15 Added Jupyter VScode documentation
+* 2023/9/16 Added CSpell VScode documentation
+
 
 # Visual Source Documentation
 * [Documentation for Visual Studio Code][]
