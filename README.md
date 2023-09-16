@@ -26,10 +26,15 @@ not want this to happen
 # Pico and Pico-Go
 
 A lot of electronics is performed using the [Pico board][]
-and [Cytron Maker board][] (Pico based). Most of the [Grove Pico Starter Kit][] can be performed on the [Cytron Maker board][]. Documentation for Starter Kit can be found at  [Grove Pico Starter Kit][]. In essence the Grove Pico header is replaced by the Cytron Maker.
+and [Cytron Maker board][] (Pico based). Most of the 
+[Grove Pico Starter Kit][] can be performed on the [Cytron Maker board][]. 
+Documentation for Starter Kit can be found at  
+[Grove Pico Starter Kit][]. In essence the Grove Pico header is replaced 
+by the Cytron Maker.
 
 The extension [Pico-Go][] enables the Pico to be managed from vscode.
-The extension [Pico-Go][] required some effort to install because of misunderstanding of the process.
+The extension [Pico-Go][] required some effort to install because of 
+misunderstanding of the process.
 
 * The linking LED did not work until
 ```json
@@ -118,14 +123,11 @@ The following is `settings.json`
 
 Jupyter description in VScode is described well in 
 [VScode Jupyter documentation][]. 
-Custom __notebook diffing__ is especial interesting
+Custom __notebook diffing__ is especially interesting
 
 # cSpell
 Add words to the dictionary by right clicking on the word and selecting 
 `Add to dictionary` and `Add to workspace dictionary`   
-
-Seems I can only add words to cspell.json by right clicking on the 
-word and selecting
 
 # Micropython source
 The `.env` can be used to specify the origin of source files is as follows
