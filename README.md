@@ -2,6 +2,7 @@
 * 2023/9/5 reset VScode:
 * 2023/9/15 Added Jupyter VScode documentation
 * 2023/9/16 Added CSpell VScode documentation
+* 2023/9/16 Reinstalled CSpell VScode documentation as stopped working
 
 
 # Visual Source Documentation
@@ -114,8 +115,17 @@ The following is `settings.json`
 
 # Jupyter
 
-Jupyter description in VScode is described well in [VScode Jupyter documentation][]. Custom notebook diffing is especial interesting
 
+Jupyter description in VScode is described well in 
+[VScode Jupyter documentation][]. 
+Custom __notebook diffing__ is especial interesting
+
+# cSpell
+Add words to the dictionary by right clicking on the word and selecting 
+`Add to dictionary` and `Add to workspace dictionary`   
+
+Seems I can only add words to cspell.json by right clicking on the 
+word and selecting
 
 # Micropython source
 The `.env` can be used to specify the origin of source files is as follows
