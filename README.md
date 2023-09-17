@@ -118,8 +118,88 @@ The following is `settings.json`
 }
 ```
 
-# Jupyter
+# Pylance
 
+**[Pylance][]** is a language server extension for **Visual Studio Code 
+(VS Code)** that provides 
+**[fast and feature-rich language support for Python][]**.
+It works alongside the Python extension in VS Code to enhance the Python 
+development experience. Pylance is powered by **Pyright**, Microsoft's 
+static type checking tool, which enables it to provide performant 
+language support. By leveraging Pyright, Pylance enhances the Python 
+IntelliSense experience by offering rich type information, helping 
+developers write better code more efficiently
+
+Some of the key features provided by Pylance include:
+- **Docstrings**: Pylance offers signature help with type information, 
+parameter suggestions, and code completion.
+- **Auto-imports**: It provides automatic import suggestions and actions 
+to add or remove import statements
+- **Code error and warning reporting**: Pylance reports code errors and 
+warnings as you type, helping you catch potential issues early on¹.
+- **Code outline and navigation**: It offers a code outline for easy 
+navigation within your Python codebase.
+- **Type checking mode**: Pylance supports different levels of type 
+checking analysis, allowing you to choose the desired level of type 
+checking.
+- **Native multi-root workspace support**: It seamlessly integrates 
+with multi-root workspaces in VS Code.
+- **IntelliCode compatibility**: Pylance is compatible with IntelliCode, 
+which provides AI-assisted code completions based on your coding patterns 
+and practices.
+
+To get started with Pylance, you can install the Python extension from 
+the VS Code marketplace. Pylance will be installed as an optional 
+extension alongside it. Once you open a Python (.py) file, the Pylance 
+extension will activate automatically.
+
+Please note that Pylance is specifically designed for Python development 
+in VS Code and may not be applicable to other programming languages or 
+IDEs.
+
+----
+
+```python.analysis.typeCheckingMode```
+
+* Used to specify the level of type checking analysis performed.
+    * Default: off.
+    * Note that the default value is set to "basic" when using VS Code 
+    Insiders, and to "off" otherwise.
+
+* Available values:
+    * off: No type checking analysis is conducted; unresolved 
+    imports/variables diagnostics are produced
+    * basic: Non-type checking-related rules (all rules in off) + basic type 
+    checking rules
+    * strict: All type checking rules at the highest severity of error 
+    (includes all rules in off and basic categories)
+
+* ```"python.analysis.typeCheckingMode": "basic"```
+
+----
+
+
+```python.analysis.diagnosticSeverityOverrides```
+
+* Used to allow a user to override the severity levels for individual 
+diagnostics should they desire.
+* Accepted severity values:
+    * error (red squiggle)
+    * warning (yellow squiggle)
+    * information (blue squiggle)
+    * none (disables the rule)
+
+* [Available diagnostic severity overrides rules][] 
+
+
+    ```
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportGeneralTypeIssues": "warning"
+    }
+
+    ```
+
+# Jupyter
 
 Jupyter description in VScode is described well in 
 [VScode Jupyter documentation][]. 
@@ -156,3 +236,7 @@ PYTHONPATH=${WORKSPACE_FOLDER};${WORKSPACE_FOLDER}/test
 [Pico board]:https://www.raspberrypi.org/documentation/rp2040/getting-started/#rp2040-boards
 [Delete VSCode and settings]: https://code.visualstudio.com/docs/setup/uninstall
 [VScode Jupyter documentation]: https://code.visualstudio.com/docs/datascience/jupyter-notebooks
+[Available diagnostic severity overrides rules]: https://github.com/microsoft/pylance-release/blob/main/DIAGNOSTIC_SEVERITY_RULES.md
+[Pylance]: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+[fast and feature-rich language support for Python]: https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/
+
