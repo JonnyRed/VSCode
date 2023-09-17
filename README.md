@@ -1,14 +1,20 @@
+
+* 2023/9/5 reset VScode:
+* 2023/9/15 Added Jupyter VScode documentation
+* 2023/9/16 Added CSpell VScode documentation
+* 2023/9/16 Reinstalled CSpell VScode documentation as stopped working
+
+
 # Visual Source Documentation
 * [Documentation for Visual Studio Code][]
 * [User and Workspace Settings][]
+
 
 # Tutorials
 * Very good youtube tutorial on [setting up][Shaffer tutorial] 
 vscode by  [Corey Schafer][]
 
 # VScode setup
-
-* 2023/9/5 reset VScode:
 
 1. Did not [delete VScode][Delete VSCode and settings].
 1.  To remove all user data after uninstalling VS Code, delete the folders 
@@ -20,10 +26,15 @@ not want this to happen
 # Pico and Pico-Go
 
 A lot of electronics is performed using the [Pico board][]
-and [Cytron Maker board][] (Pico based). Most of the [Grove Pico Starter Kit][] can be performed on the [Cytron Maker board][]. Documentation for Starter Kit can be found at  [Grove Pico Starter Kit][]. In essence the Grove Pico header is replaced by the Cytron Maker.
+and [Cytron Maker board][] (Pico based). Most of the 
+[Grove Pico Starter Kit][] can be performed on the [Cytron Maker board][]. 
+Documentation for Starter Kit can be found at  
+[Grove Pico Starter Kit][]. In essence the Grove Pico header is replaced 
+by the Cytron Maker.
 
 The extension [Pico-Go][] enables the Pico to be managed from vscode.
-The extension [Pico-Go][] required some effort to install because of misunderstanding of the process.
+The extension [Pico-Go][] required some effort to install because of 
+misunderstanding of the process.
 
 * The linking LED did not work until
 ```json
@@ -64,6 +75,7 @@ A list of all the default settings can be opened through the settings option.
 ```
 
 # Tips and Tricks
+
 [Visual Studio Code Tips and Tricks][]
 
 [Visual Studio Code Tips and Tricks]:https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_basics
@@ -106,6 +118,17 @@ The following is `settings.json`
 }
 ```
 
+# Jupyter
+
+
+Jupyter description in VScode is described well in 
+[VScode Jupyter documentation][]. 
+Custom __notebook diffing__ is especially interesting
+
+# cSpell
+Add words to the dictionary by right clicking on the word and selecting 
+`Add to dictionary` and `Add to workspace dictionary`   
+
 # Micropython source
 The `.env` can be used to specify the origin of source files is as follows
 
@@ -132,3 +155,4 @@ PYTHONPATH=${WORKSPACE_FOLDER};${WORKSPACE_FOLDER}/test
 [Cytron Maker board]:https://docs.google.com/document/d/1JoHsZk5IipQPCLXWbZYpDKjGlnkyACOJ1taUrKVsRg8/edit
 [Pico board]:https://www.raspberrypi.org/documentation/rp2040/getting-started/#rp2040-boards
 [Delete VSCode and settings]: https://code.visualstudio.com/docs/setup/uninstall
+[VScode Jupyter documentation]: https://code.visualstudio.com/docs/datascience/jupyter-notebooks
