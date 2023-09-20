@@ -3,6 +3,7 @@
 * 2023/9/15 Added Jupyter VScode documentation
 * 2023/9/16 Added CSpell VScode documentation
 * 2023/9/16 Reinstalled CSpell VScode documentation as stopped working
+* 2923/09/19 Added 'Street Side Software' code checker documentation 
 
 
 # Visual Source Documentation
@@ -22,6 +23,80 @@ vscode by  [Corey Schafer][]
     * %USERPROFILE%\.vscode  (%USERPROFILE%\ is `C:\Users\John`)
 1. Sync settings restores all setting from github turn this off if you do 
 not want this to happen
+
+# Predefined variables
+
+These variables caused a lot of confusion because they use the `\` 
+in the path name. The `\` is an escape character and needs to be used
+in `json` files. 
+
+The way of referencing the home directory is `~` thus a file in a 
+json file, is for example, is referenced as 
+`"~/AppData/Roaming/Code-Data/dictionaries/sympy-attributes.txt"`
+
+* ${userHome} - the path of the user's home folder
+* ${workspaceFolder} - the path of the folder opened in VS Code
+* ${workspaceFolderBasename} - the name of the folder opened in VS Code without any slashes (/)
+* ${file} - the current opened file
+* ${fileWorkspaceFolder} - the current opened file's workspace folder
+* ${relativeFile} - the current opened file relative to workspaceFolder
+* ${relativeFileDirname} - the current opened file's dirname relative to workspaceFolder
+* ${fileBasename} - the current opened file's basename
+* ${fileBasenameNoExtension} - the current opened file's basename with no file extension
+* ${fileExtname} - the current opened file's extension
+* ${fileDirname} - the current opened file's folder path
+* ${fileDirnameBasename} - the current opened file's folder name
+* ${cwd} - the task runner's current working directory upon the startup of VS Code
+* ${lineNumber} - the current selected line number in the active file
+* ${selectedText} - the current selected text in the active file
+* ${execPath} - the path to the running VS Code executable
+* ${defaultBuildTask} - the name of the default build task
+* ${pathSeparator} - the character used by the operating system to separate components in file paths
+
+# Environment variables
+You can also reference environment variables through the 
+`${env:Name}` syntax (for example, `${env:USERNAME}`).
+
+```json
+
+{
+  "type": "node",
+  "request": "launch",
+  "name": "Launch Program",
+  "program": "${workspaceFolder}/app.js",
+  "cwd": "${workspaceFolder}",
+  "args": ["${env:USERNAME}"]
+}
+
+```
+
+# Street Side Software 
+
+The [Street Side Software][] extension is used to check the code.
+It is installed through the extensions tab. 
+
+## Dictionaries
+
+The dictionaries are stored in the following directory
+
+```json
+"~/AppData/Roaming/Code-Data/dictionaries/sympy-attributes.txt"
+```	
+
+and is placed in the global settings as follows
+
+```json
+    "cSpell.customDictionaries": {
+        "sympy-attributes": {
+            "name": "sympy-words",
+            "path": "~/AppData/Roaming/Code-Data/dictionaries/sympy-attributes.txt",
+            "description": "Attributes of SymPy objects",
+            "addWords": false
+        },
+        "custom": true, // Enable the `custom` dictionary
+        "internal-terms": false // Disable the `internal-terms` dictionary
+    }
+```
 
 # Pico and Pico-Go
 
@@ -207,7 +282,27 @@ Custom __notebook diffing__ is especially interesting
 
 # cSpell
 Add words to the dictionary by right clicking on the word and selecting 
-`Add to dictionary` and `Add to workspace dictionary`   
+`Add to dictionary` and `Add to workspace dictionary`
+
+The following json code added to `.vscode`introduces a custom dictionary 
+`sympy-attributes.txt` and to spell check the `custom` dictionary and 
+the `internal-terms` 
+dictionary.
+
+```json	
+    "cSpell.customDictionaries": {
+        "sympy-attributes": {
+            "name": "project-words",
+            "path": "${workspaceRoot}/sympy-attributes.txt",
+            "description": "Words used in this project",
+            "addWords": false
+        },
+        "custom": true, // Enable the `custom` dictionary
+        "internal-terms": false // Disable the `internal-terms` dictionary
+    }
+```
+
+
 
 # Micropython source
 The `.env` can be used to specify the origin of source files is as follows
@@ -239,4 +334,5 @@ PYTHONPATH=${WORKSPACE_FOLDER};${WORKSPACE_FOLDER}/test
 [Available diagnostic severity overrides rules]: https://github.com/microsoft/pylance-release/blob/main/DIAGNOSTIC_SEVERITY_RULES.md
 [Pylance]: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 [fast and feature-rich language support for Python]: https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/
+[Street Side Software]: https://marketplace.visualstudio.com/items?itemName=street-side-software.code-spell-checker
 
