@@ -96,6 +96,53 @@ You can also reference environment variables through the
 
 ```
 
+# Pylint
+
+[VScode Pylint Documentation][]
+
+There are two main ways to turn off a specific Pylint error message in
+VS Code for your workspace:
+
+1. Using python.linting.pylintArgs setting:
+
+This approach allows you to pass arguments directly to Pylint, disabling
+specific message categories or codes.
+
+Here's how to do it:
+
+Open your VS Code settings. You can access them by going to
+
+* `File > Preferences > Settings`
+* Search for the setting named `python.linting.pylintArgs`.
+* Click the "Add Item" button to create an array if it doesn't exist.
+* Inside the array, add a new string value with the appropriate Pylint
+argument to disable the message.
+* For example, to disable all warnings (but keep errors), you can add
+the following:
+  * `["--disable=W"]`
+* To disable a specific Pylint message by its code
+  * `["--disable=C0302"]`
+
+* You can find a list of Pylint message codes in the
+[Pylint documentation][]
+
+2. Using a `.pylintrc` file (recommended for complex configurations):
+For more complex configurations or disabling multiple messages, creating
+a `.pylintrc` file in your workspace root is recommended. This file allows
+you to define various Pylint options, including disabling messages by
+category or code.
+
+Here's a basic example of a `.pylintrc` file disabling all warnings:
+
+```text
+[MESSAGES CONTROL]
+disable=W
+```
+
+[Pylint documentation]:https://pypi.org/project/pylint/
+
+[VScode Pylint Documentation][]https://marketplace.visualstudio.com/items?itemName=ms-python.pylint
+
 # Street Side Software
 
 The [Street Side Software][] extension is used to check the code.
