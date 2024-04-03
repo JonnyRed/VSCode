@@ -141,7 +141,7 @@ disable=W
 
 [Pylint documentation]:https://pypi.org/project/pylint/
 
-[VScode Pylint Documentation][]<https://marketplace.visualstudio.com/items?itemName=ms-python.pylint>
+[VScode Pylint Documentation]:https://marketplace.visualstudio.com/items?itemName=ms-python.pylint>
 
 # markdownlint
 
