@@ -353,6 +353,36 @@ diagnostics should they desire.
 
     ```
 
+### Pylance Override Errors
+
+To suppress specific Pylance errors in a VS Code workspace, follow
+these steps:
+
+1. Identify the Error Message: First, find the specific error message you
+want to modify or disable. For instance, let’s say you want to suppress
+the "reportCallIssue" error.
+1. Modify `settings.json`:
+    1. Open your VS Code workspace and navigate to the `settings.json` file.
+    You can access it via the following paths:
+        1. Global Settings: `C:\Users\<user.name>\AppData\Roaming\Code\User\settings.json`
+        1. Local Project Settings: `.vscode/settings.json`
+    1. Add Severity Override: In the `settings.json file`, add the
+    following entry to suppress the specific error:
+
+```json
+"python.analysis.diagnosticSeverityOverrides": {
+    "reportCallIssue": "none"
+}
+```
+
+### Pylint override errors
+
+```json
+    "pylint.args": [
+        "--disable=E1102"
+    ]
+```
+
 ## Jupyter
 
 Jupyter description in VScode is described well in
@@ -361,8 +391,65 @@ Custom **notebook diffing** is especially interesting
 
 ## cSpell
 
+### Add words
+
 Add words to the dictionary by right clicking on the word and selecting
 `Add to dictionary` and `Add to workspace dictionary`
+
+### Disable  spelling
+
+Exclude the File from Spell Checking in the “Problems” Panel:
+
+1. Open your workspace settings (you can do this by pressing F1 and
+searching for “Workspace Settings”).
+1. Look for the setting called `cSpell.diagnosticLevel` in your
+`settings.json`.
+1. Set it to `Hint` to remove spell checker warnings/errors from the
+`PROBLEMS` panel.
+1. Note that in your files, these “hints” will now be indicated by three
+small dots under the beginning of the misspelled word and may not be
+very apparent.
+1. You can customize the appearance of these hint dots using the
+following settings:
+
+```json
+"workbench.colorCustomizations": {
+    "editorHint.foreground": "#ff0000", // Change the color of the three dots
+    "editorHint.border": "#00ff66" // Underline the entire word with dots in your chosen color
+}
+```
+
+This will give you both sets of hint dots, you can hide the built-in
+three dots by making them transparent:
+
+```json
+"editorHint.foreground": "#f000",
+```
+
+#### Ignore Specific Paths
+
+Ignore Specific Paths or Files from Spell Checking:
+
+If you want to exclude specific files or paths from being spell
+checked altogether, follow these steps:
+
+1. Open your workspace settings (press F1 and search for “Workspace Settings”).
+Search for cSpell.ignorePaths.
+1. Add the path(s) you want to ignore. For example:
+
+```json
+    "cSpell.ignorePaths": [
+        "environment.yml"
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/objects",
+        ".vscode",
+        ".vscode-insiders"
+    ],
+```
+
+### Custom Dictionary
 
 The following json code added to `.vscode`introduces a custom dictionary
 `sympy-attributes.txt` and to spell check the `custom` dictionary and
