@@ -1,22 +1,16 @@
+# VScode
 
-# Visual Source Documentation
-
-* 2023/11/04 Copy vscode extension settings
-* 2023/9/5 reset VScode:
-* 2023/9/15 Added Jupyter VScode documentation
-* 2023/9/16 Added CSpell VScode documentation
-* 2023/9/16 Reinstalled CSpell VScode documentation as stopped working
-* 2923/09/19 Added 'Street Side Software' code checker documentation
+## Visual Source Documentation
 
 * [Documentation for Visual Studio Code][]
 * [User and Workspace Settings][]
 
-# Tutorials
+## Tutorials
 
 * Very good youtube tutorial on [setting up][Shaffer tutorial]
 vscode by  [Corey Schafer][]
 
-# VScode setup
+## VScode setup
 
 1. Did not [delete VScode][Delete VSCode and settings].
 1. To remove all user data after uninstalling VS Code, delete the folders
@@ -25,7 +19,7 @@ vscode by  [Corey Schafer][]
 1. Sync settings restores all setting from github turn this off if you do
 not want this to happen
 
-## VSCode global settings
+### VSCode global settings
 
 To copy your VS Code global settings from one account to another,
 
@@ -33,7 +27,7 @@ To copy your VS Code global settings from one account to another,
 `settings.json` file located at
 `C:\Users\{Username}\AppData\Roaming\Code\User` to the new device.
 
-## VSCode extension settings
+### VSCode extension settings
 
 Copy your VS Code extensions from one device to another:
 
@@ -49,7 +43,7 @@ cloud storage, or any other preferred method.
 6. Paste the `extensions` folder in this directory.
 7. Open VS Code on the second device and your extensions should be available.
 
-# Predefined variables
+## Predefined variables
 
 These variables caused a lot of confusion because they use the `\`
 in the path name. The `\` is an escape character and needs to be used
@@ -78,7 +72,7 @@ json file, is for example, is referenced as
 * ${defaultBuildTask} - the name of the default build task
 * ${pathSeparator} - the character used by the operating system to separate components in file paths
 
-# Environment variables
+## Environment variables
 
 You can also reference environment variables through the
 `${env:Name}` syntax (for example, `${env:USERNAME}`).
@@ -96,7 +90,7 @@ You can also reference environment variables through the
 
 ```
 
-# Pylint
+## Pylint
 
 [VScode Pylint Documentation][]
 
@@ -143,7 +137,7 @@ disable=W
 
 [VScode Pylint Documentation]:https://marketplace.visualstudio.com/items?itemName=ms-python.pylint>
 
-# markdownlint
+## markdownlint
 
 ```json
     "markdownlint.config": {
@@ -153,12 +147,12 @@ disable=W
     }
 ```
 
-# Street Side Software
+## Street Side Software
 
 The [Street Side Software][] extension is used to check the code.
 It is installed through the extensions tab.
 
-## Dictionaries
+### Dictionaries
 
 The dictionaries are stored in the following directory
 
@@ -181,7 +175,7 @@ and is placed in the global settings as follows
     }
 ```
 
-# Pico and Pico-Go
+## Pico and Pico-Go
 
 A lot of electronics is performed using the [Pico board][]
 and [Cytron Maker board][] (Pico based). Most of the
@@ -207,7 +201,7 @@ was added to `settings.json`
 * Use of the FTP server in [Pico-Go][] is essential to upload Microphone code to the Pico.
 * It seems much easier to develop code on vscode and executed it through [Thonny][]
 
-# Useful Global settings
+## Useful Global settings
 
 Use json instead of the standard UI
 
@@ -235,13 +229,13 @@ A list of all the default settings can be opened through the settings option.
  "workbench.startupEditor": "none",
 ```
 
-# Tips and Tricks
+## Tips and Tricks
 
 [Visual Studio Code Tips and Tricks][]
 
 [Visual Studio Code Tips and Tricks]:https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_basics
 
-# Settings
+## Settings
 
 The set of of Visual Studio code proved a challenge. Here are the settings to enable the local source files to be accessible from VScode. The settings `"python.defaultInterpreterPath"` for python and `"terminal.integrated.env.windows"` are important to execute python and pico correctly.
 
@@ -279,7 +273,7 @@ The following is `settings.json`
 }
 ```
 
-# Pylance
+## Pylance
 
 **[Pylance][]** is a language server extension for **Visual Studio Code
 (VS Code)** that provides
@@ -359,13 +353,13 @@ diagnostics should they desire.
 
     ```
 
-# Jupyter
+## Jupyter
 
 Jupyter description in VScode is described well in
 [VScode Jupyter documentation][].
 Custom **notebook diffing** is especially interesting
 
-# cSpell
+## cSpell
 
 Add words to the dictionary by right clicking on the word and selecting
 `Add to dictionary` and `Add to workspace dictionary`
@@ -388,7 +382,7 @@ dictionary.
     }
 ```
 
-# Micropython source
+## Micropython source
 
 The `.env` can be used to specify the origin of source files is as follows
 
@@ -397,7 +391,7 @@ WORKSPACE_FOLDER=D:/Users/John/Documents/Computers/RaspberryPi/MicroPython
 PYTHONPATH=${workspaceFolder};${WORKSPACE_FOLDER}/test
 ```
 
-# Pico source
+## Pico source
 
 The `.env` is as follows
 
