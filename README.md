@@ -90,6 +90,65 @@ You can also reference environment variables through the
 
 ```
 
+## External modules
+
+To add local modules to the Python path in Visual Studio Code, you can
+modify the settings.json file. Here are the steps:
+
+1. Open Visual Studio Code.
+1. Press Ctrl+Shift+P to open the command palette.
+1. Type settings.json and select Preferences: Open Settings (JSON).
+1. Add the following lines to the settings.json file:
+
+```json
+{
+    "python.autoComplete.extraPaths": [
+      "D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes"
+    ],
+    "python.analysis.extraPaths": [
+      "D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes"
+    ],
+    "terminal.integrated.env.windows": {
+      "PYTHONPATH":"D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes"
+    },
+    "python.envFile": "${workspaceFolder}/.env"
+}
+```
+
+and `.env` file in the local workspace contains
+
+```bash
+PYTHONPATH=D:\Users\John\Documents\IPython Notebooks\sympy\sympy-notes
+```
+
+### Settings explanation
+
+* `python.autoComplete.extraPaths`: This setting specifies additional directories
+to search for modules when providing auto-completion suggestions.
+In this example, the directory
+`D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes` is added
+to the list of directories to search for modules.
+* `python.analysis.extraPaths`: This setting specifies additional directories
+to search for modules when performing static analysis, such as linting
+and code navigation. In this example, the directory
+`D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes` is added to
+the list of directories to search for modules.
+* `terminal.integrated.env.windows`: This setting specifies environment
+variables for the integrated terminal on Windows. In this example, the
+`PYTHONPATH` environment variable is set to
+`D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes`, which
+specifies the directory to search for modules when running Python scripts
+in the integrated terminal.
+* `python.envFile`: This setting specifies the path to a file containing
+environment variable definitions for the Python interpreter. In this example,
+the file `${workspaceFolder}/.env` is used, which specifies the path to the
+file relative to the workspace folder. The `.env` file can be used to
+set environment variables that are specific to the workspace, such as
+the `PYTHONPATH` variable.
+
+By setting these values, you can add local modules to the Python path in
+Visual Studio Code, allowing you to import and use them in your Python scripts.
+
 ## Pylint
 
 [VScode Pylint Documentation][]
@@ -488,17 +547,31 @@ PYTHONPATH=${WORKSPACE_FOLDER};${WORKSPACE_FOLDER}/test
 ```
 
 [Shaffer tutorial]: https://youtu.be/-nh9rCzPJ20
+
 [Corey Schafer]:https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g
+
 [User and Workspace Settings]:https://code.visualstudio.com/docs/getstarted/settings
+
 [Documentation for Visual Studio Code]:https://code.visualstudio.com/docs
+
 [Thonny]:https://thonny.org/
+
 [Pico-Go]:http://pico-go.net/docs/start/quick/
+
 [Grove Pico Starter Kit]:https://wiki.seeedstudio.com/Grove_Shield_for_Pi_Pico_V1.0/
+
 [Cytron Maker board]:https://docs.google.com/document/d/1JoHsZk5IipQPCLXWbZYpDKjGlnkyACOJ1taUrKVsRg8/edit
+
 [Pico board]:https://www.raspberrypi.org/documentation/rp2040/getting-started/#rp2040-boards
+
 [Delete VSCode and settings]: https://code.visualstudio.com/docs/setup/uninstall
+
 [VScode Jupyter documentation]: https://code.visualstudio.com/docs/datascience/jupyter-notebooks
+
 [Available diagnostic severity overrides rules]: https://github.com/microsoft/pylance-release/blob/main/DIAGNOSTIC_SEVERITY_RULES.md
+
 [Pylance]: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+
 [fast and feature-rich language support for Python]: https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/
+
 [Street Side Software]: https://marketplace.visualstudio.com/items?itemName=street-side-software.code-spell-checker
