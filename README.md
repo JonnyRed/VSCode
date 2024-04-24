@@ -149,6 +149,69 @@ the `PYTHONPATH` variable.
 By setting these values, you can add local modules to the Python path in
 Visual Studio Code, allowing you to import and use them in your Python scripts.
 
+## File configuration
+
+Configuring Pylance in VS Code to check all files in your workspace.
+
+### Configure extraPaths
+
+* In your settings.json file, add the python.analysis.extraPaths setting.
+* Set the value to a list of paths (folders or files) containing your Python code.
+* This instructs Pylance to focus its analysis on these specific locations.
+
+An example settings.json configuration:
+
+```json
+{
+    "python.analysis.extraPaths": [
+        "./src",  // Replace with your Python code folder path
+        "./tests"  // Add additional paths if needed
+    ]
+}
+
+
+### Use .vscodeignore
+
+* Create a .vscodeignore file (if it doesn't exist) in your workspace root directory.
+* Add patterns to exclude non-Python files or folders that you don't want Pylance to analyze.
+* This further refines Pylance's focus and improves performance.
+
+An example of .vscodeignore
+
+```text
+# Exclude virtual environment folders
+.venv/
+env/
+venv/
+
+# Exclude build output or temporary folders
+build/
+dist/
+node_modules/
+
+# Exclude specific files
+README.md
+LICENSE
+requirements.txt
+
+# Exclude all files starting with "_" (common for configuration files)
+**/_*.py
+
+# Exclude all .txt files except one named "important.txt"
+*.txt
+!important.txt
+
+# Exclude all JavaScript files (if you're working on a Python project)
+*.js
+
+# Exclude a specific directory and its contents
+excluded_dir/
+```
+
+```
+
+
+
 ## Pylint
 
 [VScode Pylint Documentation][]
@@ -192,9 +255,7 @@ Here's a basic example of a `.pylintrc` file disabling all warnings:
 disable=W
 ```
 
-[Pylint documentation]:https://pypi.org/project/pylint/
 
-[VScode Pylint Documentation]:https://marketplace.visualstudio.com/items?itemName=ms-python.pylint>
 
 ## markdownlint
 
