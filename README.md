@@ -168,9 +168,11 @@ An example settings.json configuration:
         "./tests"  // Add additional paths if needed
     ]
 }
-
+```
 
 ### Use .vscodeignore
+
+To exclude files from analysis
 
 * Create a .vscodeignore file (if it doesn't exist) in your workspace root directory.
 * Add patterns to exclude non-Python files or folders that you don't want Pylance to analyze.
@@ -207,10 +209,6 @@ requirements.txt
 # Exclude a specific directory and its contents
 excluded_dir/
 ```
-
-```
-
-
 
 ## Pylint
 
@@ -254,8 +252,6 @@ Here's a basic example of a `.pylintrc` file disabling all warnings:
 [MESSAGES CONTROL]
 disable=W
 ```
-
-
 
 ## markdownlint
 
