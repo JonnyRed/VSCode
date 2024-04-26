@@ -118,7 +118,11 @@ modify the settings.json file. Here are the steps:
 and `.env` file in the local workspace contains
 
 ```bash
-PYTHONPATH=D:\Users\John\Documents\IPython Notebooks\sympy\sympy-notes
+PYTHONPATH=D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes
+```
+
+```bash
+PYTHONPATH="D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes;D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes/sympy_support;D:/Users/John/Documents/IPython Notebooks/sympy/sympy-notes/kronecker_levi"
 ```
 
 ### Settings explanation
